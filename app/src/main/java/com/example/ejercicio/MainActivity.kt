@@ -17,7 +17,7 @@ import org.json.JSONException
 class MainActivity : AppCompatActivity() {
 
     // URL del servicio JSON
-    private val url = "https://jsonplaceholder.typicode.com/postss"
+    private val url = "https://jsonplaceholder.typicode.com/posts"//1
     // Etiqueta para los logs
     private val TAG = "MainActivity"
 
@@ -64,13 +64,13 @@ class MainActivity : AppCompatActivity() {
             Request.Method.GET, url,
             { response ->
                 try {
-                    val jsonArray = JSONArray(response)
+                    val jsonArray = JSONArray(response)//2
 
                     // ---- CÓDIGO MEJORADO ----
                     // Bucle para recorrer cada objeto en el array
                     for (i in 0 until jsonArray.length()) {
                         val jsonObject = jsonArray.getJSONObject(i)
-                        val id = jsonObject.getInt("id")
+                        val id = jsonObject.getInt("id")//3
                         val title = jsonObject.getString("title")
 
                         // Imprimimos en Logcat
