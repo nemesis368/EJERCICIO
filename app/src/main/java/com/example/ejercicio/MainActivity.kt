@@ -17,7 +17,8 @@ import org.json.JSONException
 class MainActivity : AppCompatActivity() {
 
     // URL del servicio JSON
-    private val url = "https://jsonplaceholder.typicode.com/postss"
+    private val url = "https://jsonplaceholder.typicode.com/posts"
+    //ERROR TIPOGRAFICO EQUIPO 69
     // Etiqueta para los logs
     private val TAG = "MainActivity"
 
@@ -65,11 +66,13 @@ class MainActivity : AppCompatActivity() {
             { response ->
                 try {
                     val jsonArray = JSONArray(response)
+                    //ERA JSONARRAY EN LUGAR OBJECT EQUIPO69
 
                     // ---- CÓDIGO MEJORADO ----
                     // Bucle para recorrer cada objeto en el array
                     for (i in 0 until jsonArray.length()) {
                         val jsonObject = jsonArray.getJSONObject(i)
+                        //
                         val id = jsonObject.getInt("id")
                         val title = jsonObject.getString("title")
 
