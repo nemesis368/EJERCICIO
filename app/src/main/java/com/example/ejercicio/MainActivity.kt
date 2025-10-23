@@ -64,13 +64,13 @@ class MainActivity : AppCompatActivity() {
             Request.Method.GET, url,
             { response ->
                 try {
-                    val jsonObject = JSONArray(response)
+                    val jsonArray = JSONArray(response)
 
                     // ---- CÓDIGO MEJORADO ----
                     // Bucle para recorrer cada objeto en el array
                     for (i in 0 until jsonArray.length()) {
                         val jsonObject = jsonArray.getJSONObject(i)
-                        val id = jsonArray.getInt("id")
+                        val id = jsonObject.getInt("id")
                         val title = jsonObject.getString("title")
 
                         // Imprimimos en Logcat
